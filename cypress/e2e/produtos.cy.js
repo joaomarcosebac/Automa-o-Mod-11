@@ -31,5 +31,7 @@ describe('funcionalidade pagina de produtos', () => {
             cy.get('.input-text').clear().type(quantidade)
             cy.get('.single_add_to_cart_button').click()
             cy.get('.dropdown-toggle > .mini-cart-items').should('contain' ,quantidade)
+
+            cy.get('.woocommerce-message > .button').should('contain' , 'Ver carrinho')
     });
 })
