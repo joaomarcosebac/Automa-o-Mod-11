@@ -8,7 +8,7 @@ context('funcionalidade login', () =>{
        });
 
        
-       it.only ('Deve fazer login com sucesso', () =>{
+       it('Deve fazer login com sucesso', () =>{
         cy.get ('#username').type('aluno_ebac@teste.com')
         cy.get ('#password').type('teste@teste.com')
         cy.get ('.woocommerce-form >.button').click()
@@ -29,6 +29,9 @@ context('funcionalidade login', () =>{
             cy.get ('#username').type('aluno_ebac@teste.com')
             cy.get ('#password').type('e@teste.com')
             cy.get ('.woocommerce-form >.button').click()
+            
+            cy.get('.woocommerce-error > li').should('contain' , 'Erro')
+
         })
         
         
